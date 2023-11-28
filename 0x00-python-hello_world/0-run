@@ -1,0 +1,17 @@
+#!/bin/bash
+# Runs a Python script specified in the PYFILE environment variable
+
+PYFILE=$PYFILE
+
+if [ -z "$PYFILE" ]; then
+    echo "Error: PYFILE environment variable not set"
+    exit 1
+fi
+
+if [ ! -f "$PYFILE" ]; then
+    echo "Error: File $PYFILE not found"
+    exit 1
+fi
+
+chmod +x "$PYFILE"
+./"$PYFILE"

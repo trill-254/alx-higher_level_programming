@@ -1,0 +1,11 @@
+#!/bin/bash
+# Runs Python code specified in the PYCODE environment variable
+
+source list.sh
+
+if [ -z "$PYCODE" ]; then
+    echo "Error: PYCODE environment variable not set"
+    exit 1
+fi
+
+python3 -c "$PYCODE"
